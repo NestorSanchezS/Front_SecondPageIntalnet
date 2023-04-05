@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Auth } from "../pages/admin";
 import { AdminLayout } from "../layouts/AdminLayout";
 
+const user = null;
 export function AdminRouter() {
   const loadLayout = (Layout, Page) => {
     return (
