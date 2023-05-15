@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Courses = () => {
-  return <div>Courses</div>;
-};
+export function Courses() {
+  return <div>Estamos en Courses</div>;
+}
