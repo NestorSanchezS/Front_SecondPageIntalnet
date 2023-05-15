@@ -18,6 +18,13 @@ export function AdminRouter() {
         <Route path="/admin/*" element={loadLayout(AdminLayout, Auth)} />
       ) : (
         <>
+          {["/admin", "/admin/blog"].map((path) => (
+            <Route
+              key={path}
+              path={path}
+              element={loadLayout(AdminLayout, Users)}
+            />
+          ))}
           <Route path="/admin/users" element={loadLayout(AdminLayout, Users)} />
         </>
       )}
