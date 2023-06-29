@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import { Auth, Users, Blog, Courses, Menu, Newsletter } from "../pages/admin";
 import { AdminLayout } from "../layouts/AdminLayout";
 
-const user = "Mi compa";
+const user = null;
+
 export function AdminRouter() {
   const loadLayout = (Layout, Page) => {
     return (
@@ -15,14 +16,14 @@ export function AdminRouter() {
   return (
     <Routes>
       {!user ? (
-        <Route path="/admin/*" element={loadLayout(AdminLayout, Auth)} />
+        <Route path="/admin/*" element={<AdminLayout />} />
       ) : (
         <>
           {["/admin", "/admin/blog"].map((path) => (
             <Route
+              element={loadLayout(AdminLayout, Blog)}
               key={path}
               path={path}
-              element={loadLayout(AdminLayout, Blog)}
             />
           ))}
           <Route path="/admin/users" element={loadLayout(AdminLayout, Users)} />
